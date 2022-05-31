@@ -13,7 +13,7 @@ import com.uce.edu.demo.consultorio.CitaMedica2;
 @SpringBootApplication
 public class ProyectoU1JmApplication implements CommandLineRunner{
 	
-//	//DI por atributo
+//	//1: DI por atributo
 //	@Autowired
 //	private CitaMedica cita;
 	

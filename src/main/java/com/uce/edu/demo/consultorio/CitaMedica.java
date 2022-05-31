@@ -12,6 +12,7 @@ public class CitaMedica {
 	private Doctor doctor;
 	private Paciente paciente;
 	
+	//2: DI por constructor
 	public CitaMedica(Doctor doctor, Paciente paciente) {
 		this.doctor=doctor;
 		this.paciente=paciente;
