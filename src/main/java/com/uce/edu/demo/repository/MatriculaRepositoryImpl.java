@@ -1,7 +1,10 @@
 package com.uce.edu.demo.repository;
 
+import org.springframework.stereotype.Repository;
+
 import com.uce.edu.demo.modelo.Matricula;
 
+@Repository
 public class MatriculaRepositoryImpl implements IMatriculaRepository{
 
 	@Override
@@ -14,7 +17,9 @@ public class MatriculaRepositoryImpl implements IMatriculaRepository{
 	public Matricula buscar(String numero) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha buscado en la base la matricula:"+numero);
-		return null;
+		Matricula mat=new Matricula();
+		mat.setNumero(numero);
+		return mat;
 	}
 
 	@Override

@@ -18,5 +18,9 @@ public class Materia {
 	public void setSemestre(String semestre) {
 		this.semestre = semestre;
 	}
+	@Override
+	public String toString() {
+		return "Materia [nombre=" + nombre + ", semestre=" + semestre + "]";
+	}
 	
 }
