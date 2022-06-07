@@ -11,7 +11,7 @@ public class EstudianteRepositoryImpl implements IEstudianteRepository{
 	public void insertar(Estudiante e) {
 		// TODO Auto-generated method stub
 		//Aqui se realiza la insercion en la base de datos
-		System.out.println("Se ha insertado en la base el estudiante:"+e);
+		System.out.println("Se ha insertado en la base el estudiante:"+ e);
 		
 	}
 
@@ -19,7 +19,9 @@ public class EstudianteRepositoryImpl implements IEstudianteRepository{
 	public Estudiante buscar(String apellido) {
 		// TODO Auto-generated method stub
 		System.out.println("Se ha buscado en la base el estudiante:"+apellido);
-		return null;
+		Estudiante e=new Estudiante();
+		e.setApellido(apellido);
+		return e;
 	}
 
 	@Override
