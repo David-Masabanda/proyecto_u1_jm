@@ -6,4 +6,8 @@ public interface IDepositoRepository {
 	
 	public void insertarDeposito(Deposito d);
 	
+	//Faltan Buscar, Actualizar y Eliminar
+	public Deposito buscarDeposito(String numeroCuenta);
+	public void actualizarDeposito(Deposito d);
+	public void eliminarDeposito(String numeroCuenta);
 }

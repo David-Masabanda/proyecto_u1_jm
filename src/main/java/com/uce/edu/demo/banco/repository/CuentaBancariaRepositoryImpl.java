@@ -24,4 +24,16 @@ public class CuentaBancariaRepositoryImpl implements ICuentaBancariaRepository{
 		return cta;
 	}
 
+	@Override
+	public void crearCuenta(CuentaBancaria c) {
+		// TODO Auto-generated method stub
+		System.out.println("Se ha creado una nueva cuenta bancaria: "+c);
+	}
+
+	@Override
+	public void eliminarCuenta(String numero) {
+		// TODO Auto-generated method stub
+		System.out.println("Se ha eliminado la cuenta bancaria: "+numero);
+	}
+
 }

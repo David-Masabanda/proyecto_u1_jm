@@ -13,4 +13,23 @@ public class TransferenciaRepositoryImpl implements ITransferenciaRepository{
 		
 	}
 
+	@Override
+	public Transferencia buscar(String numeroDestino) {
+		// TODO Auto-generated method stub
+		System.out.println("Buscando la trasferencia en la base de datos: "+ numeroDestino);
+		return null;
+	}
+
+	@Override
+	public void actualizar(Transferencia t) {
+		// TODO Auto-generated method stub
+		System.out.println("Actualizando la transferencia en la base: "+t);
+	}
+
+	@Override
+	public void borrar(String numeroDestino) {
+		// TODO Auto-generated method stub
+		System.out.println("Borrando la transferencia en la base: "+numeroDestino);
+	}
+
 }
