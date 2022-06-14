@@ -1,9 +1,5 @@
 package com.uce.edu.demo.bodega.service;
 
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 import com.uce.edu.demo.bodega.modelo.Producto;
 
 public interface IProductoService {
