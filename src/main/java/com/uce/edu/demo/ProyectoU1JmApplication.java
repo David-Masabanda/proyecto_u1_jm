@@ -1,35 +1,28 @@
 package com.uce.edu.demo;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.uce.edu.demo.modelo.Estudiante;
-import com.uce.edu.demo.modelo.Materia;
-import com.uce.edu.demo.modelo.Matricula;
-import com.uce.edu.demo.modelo.ProfesorGeneral;
-import com.uce.edu.demo.modelo.ProfesorMateria;
-import com.uce.edu.demo.service.IMatriculaService;
+import com.uce.edu.demo.cine.modelo.ClienteNormal;
+import com.uce.edu.demo.cine.modelo.ClienteVIP;
+import com.uce.edu.demo.cine.service.ITicketService;
 
 @SpringBootApplication
 public class ProyectoU1JmApplication implements CommandLineRunner{
 	
 	@Autowired
-	private ProfesorGeneral general;
+	private ClienteNormal clienteN1;
 	@Autowired
-	private ProfesorGeneral general1;
-	
+	private ClienteNormal clienteN2;
 	@Autowired
-	private ProfesorMateria materia;
+	private ClienteVIP clienteV1;
 	@Autowired
-	private ProfesorMateria materia1;
+	private ClienteVIP clienteV2;
 	@Autowired
-	private IMatriculaService iMatriculaService;
+	private ITicketService ticketService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoU1JmApplication.class, args);
@@ -37,32 +30,32 @@ public class ProyectoU1JmApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("EJEMPLO SINGLETON");
-		this.general.setNombre("David");
-		this.general.setApellido("Lopez");
-		System.out.println(this.general);
-		System.out.println("---------");
-		
-		System.out.println(this.general1);
-		this.general1.setNombre("Alex");
-		System.out.println("---------");
-		System.out.println(this.general1);
+		System.out.println();
+		System.out.println("COMPRA DE ENTRADAS EN UN CINE \n");
+		//En un cine algunos clientes obtienen una membresia para mayor beneficio en cada consumo
+		//Un descuento en las entradas o canjeo de puntos. 
+		//Estos en vez de dar la cedula dan un carnet con un codigo especial que los diferencia.
+
+		System.out.println("------>Ejemplo Singleton");
+		this.clienteV1.setCodigo("1531");
+		this.clienteV1.setNombre("Sara");
+		this.clienteV1.setPuntos("120");
+		this.ticketService.nuevoTicket("1531", "The Batman");
+		System.out.println(this.clienteV1);
+		this.clienteV1.setNombre("Daniel");
+		System.out.println(this.clienteV1);
+		System.out.println(this.clienteV2);
 		System.out.println();
 		
-		System.out.println("EJEMPLO PROTOTYPE");
-		this.materia.setNombre("Daniel");
-		this.materia.setApellido("Martinez");
-		System.out.println(this.materia);
-		System.out.println("--------");
-		System.out.println(this.materia1);
-		System.out.println();
 		
-		Matricula matricula1=new Matricula();
-		matricula1.setEstudiante(new Estudiante());
-		//List<Materia> materia=new ArrayList
-		matricula1.setMateria(new ArrayList<Materia>());
-		matricula1.setNumero("1234");
-		this.iMatriculaService.ingresarMatricula(matricula1);
+		System.out.println("------>Ejemplo Prototype");
+		this.clienteN1.setCedula("1719276810");
+		this.clienteN1.setNombre("Luis");
+		this.ticketService.nuevoTicket("1719276810", "El Conjuro");
+		System.out.println(clienteN1);
+		this.clienteN2.setNombre("Rebeca");
+		System.out.println(clienteN2);
+	
 	}
 
 }
